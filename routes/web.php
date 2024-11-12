@@ -2,31 +2,25 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\Auth\LoginRegisterController;
 
-use App\Http\Controllers\AuthController;
+Route::view('/LandingPage','LandingPage')->name('landingpage');
+Route::get('/LandingPage', [LandingPageController::class, 'index'])->name('landingpage');
 
-// Registration Routes
-Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
-Route::post('/register', [AuthController::class, 'register'])->name('register.submit');
+Route::get('/register', [LoginRegisterController::class, 'showRegisterForm'])->name('register');
+Route::post('/register', [LoginRegisterController::class, 'register']);
 
-// Login Routes
-Route::get('/login', [AuthController::class, 'showLoginForm'])->name('user.login');
-Route::post('/login', [AuthController::class, 'login'])->name('login');
+Route::get('/login', [LoginRegisterController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [LoginRegisterController::class, 'login']);
 
-// User Landing Page Route
-Route::get('/user/landing', function () {
-    return view('/user/landing'); // Make sure you have a landing.blade.php file in resources/views
-})->name('user.landing');
+Route::get('/forgot-password', [LoginRegisterController::class, 'showForgotPasswordForm'])->name('password.request');
+Route::post('/forgot-password',[LoginRegisterController::class, 'passwordEmail']);
+Route::get('/reset-password/{token}',[LoginRegisterController::class, 'passwordReset'])->name('password.reset');
+Route::post('/reset-password', [LoginRegisterController::class, 'passwordUpdate'])->name('password.update');
 
-// Admin Dashboard Route
-Route::get('/admin/dashboard', function () {
-    return view('/admin/dashboard'); // Make sure you have a dashboard.blade.php file in resources/views
-})->name('admin.dashboard');
+Route::post('/logout', [LoginRegisterController::class, 'logout'])->name('logout');
 
-// Logout Route
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
 
 

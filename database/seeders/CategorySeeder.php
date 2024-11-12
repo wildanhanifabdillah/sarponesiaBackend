@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class CategorySeeder extends Seeder
 {
@@ -15,35 +16,43 @@ class CategorySeeder extends Seeder
         DB::table('categories')->insert([
             [
                 'Name' => 'Robusta',
-                'category_type' => 'product'
+                'category_type' => 'product',
+                'Description' => null
             ],
             [
                 'Name' => 'Roastedbean',
-                'category_type' => 'product'
+                'category_type' => 'product',
+                'Description' => null
             ],
             [
                 'Name' => 'Pupuk Kopi',
-                'category_type' => 'product'
+                'category_type' => 'product',
+                'Description' => null
             ],
             [
                 'Name' => 'Peralatan',
-                'category_type' => 'product'
+                'category_type' => 'product',
+                'Description' => null
             ],
             [
                 'Name' => 'Perawatan Kebun',
-                'category_type' => 'service'
+                'category_type' => 'service',
+                'Description' => null
             ],
             [
                 'Name' => 'Pelatihan',
-                'category_type' => 'service'
+                'category_type' => 'service',
+                'Description' => null
             ],
             [
                 'Name' => 'News',
-                'category_type' => 'article'
+                'category_type' => 'article',
+                'Description' => null
             ],
             [
                 'Name' => 'Coffee Technology',
-                'category_type' => 'article'
+                'category_type' => 'article',
+                'Description' => null
             ],
             [
                 'Name' => 'Tips & Trick',

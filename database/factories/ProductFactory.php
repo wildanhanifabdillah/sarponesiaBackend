@@ -22,7 +22,6 @@ class ProductFactory extends Factory
             'Price' => $this->faker->randomFloat(2, 5, 100),
             'Stock' => $this->faker->numberBetween(1, 100),
             'Category_ID' => \App\Models\Category::where('category_type', 'product')->inRandomOrder()->first()->Category_ID,
-            'Image_url' => $this->faker->imageUrl(),
         ];
     }
 }

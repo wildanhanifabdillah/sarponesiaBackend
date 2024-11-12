@@ -13,12 +13,9 @@ return new class extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->id('Article_ID');
-            $table->unsignedBigInteger('Category_ID');
-            $table->string('Title');
+            $table->foreignId('Category_ID')->references('Category_ID')->on('categories')->onDelete('cascade');            $table->string('Title');
             $table->text('Content');
             $table->timestamps();
-
-            $table->foreign('Category_ID')->references('Category_ID')->on('categories')->onDelete('cascade');
         });
     }
 
