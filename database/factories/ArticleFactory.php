@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Category;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Article>
@@ -19,7 +20,7 @@ class ArticleFactory extends Factory
         return [
             'Title' => $this->faker->sentence(),
             'Content' => $this->faker->paragraph(),
-            'Category_ID' => \App\Models\Category::where('category_type', 'article')->inRandomOrder()->first()->Category_ID,
+            'Category_ID' => Category::where('category_type', 'article')->inRandomOrder()->first()->Category_ID,
         ];
     }
 }

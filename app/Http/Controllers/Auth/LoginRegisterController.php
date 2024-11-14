@@ -76,7 +76,7 @@ class LoginRegisterController extends Controller
         );
 
         return $status === Password::RESET_LINK_SENT
-            ? back()->with(['status' => __($status)])
+            ? back()->with(['status' => 'Link reset password telah dikirim ke email anda'])
             : back()->withErrors(['email' => __($status)]);
     }
 

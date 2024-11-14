@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/layout.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/layout2.css') }}" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     @yield('styles')
     <title>Sarponesia</title>
@@ -21,24 +21,14 @@
                 <img src="{{ asset('assets/Logo.png') }}" alt="Sarponesia Coffee">
             </div>
             <div class="header-right">
-                @guest
-                    <a class="login-btn" href="{{ url('/login') }}">Login</a>
-                    <a class="registerBtn" href="{{ url('/register') }}">Register</a>
-                @endguest
-                @auth
-                        <span class="username">Hai, {{ Auth::user()->name }}</span>
-                        <form action="{{ route('logout') }}" method="POST" style="display: inline;">
-                            @csrf
-                            <button type="submit" class="logout-btn">Logout</button>
-                        </form>
-                    @endauth
+                <a class="login-btn" href="{{ url('/login') }}">Login</a>
             </div>
         </div>
                 <nav>
                 <ul class="nav-links">
-                    <img src="{{ asset('assets/Logonav.png') }}" alt="Sarponesia Coffee Nav" class="LogoNav" onclick="scrollToTop()">
+                <img src="{{ asset('assets/6b6feb3a1b323bb2081cde3cc92ebaa3.svg') }}" alt="Sarponesia Coffee Nav" class="Burger" onclick="scrollToTop()">
                     <li class="{{ Request::is('home') ? 'active' : '' }}">
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ route('landingpage') }}">Home</a>
                     </li>
                     <li class="{{ Request::is([ 'benihpupuk', 'peralatan']) ? 'active' : '' }}">
                         <a href="#">Perlengkapan Produksi</a>
@@ -68,14 +58,15 @@
                     </li>
                     <li class="{{ Request::is('contact') ? 'active' : '' }}">
                         <a href="{{ url('/contact') }}">Hubungi</a>
-
+                    </li>
+                   
                 </ul>
-                        <div class="search">
+                <div class="search">
                             <input type="text" class="input" placeholder="Search...">
                             <button class="btn">
-                                <img src="{{ asset('assets/Search-vector.svg') }}">
+                                <img src="{{ asset('assets/b31ee90764abc6b75268217b782bd024.svg') }}">
                             </button>
-                        </div>
+                    </div>
                 </nav>
 
     </header>
@@ -88,7 +79,7 @@
 <footer>
     <div class="container footer-container">
         <img class="businessImage" src="{{ asset('assets/Logo_footer.png') }}" alt="Logo footer" />
-
+        
         <div class="footer-section">
             <h3>Jam Buka</h3>
             <p>Senin - Sabtu</p>
@@ -100,7 +91,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div class="footer-section">
             <h3>Informasi</h3>
             <p>Menu</p>
@@ -112,7 +103,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div class="footer-section">
             <h3>Best Produk</h3>
             <p>Pelatihan Barista</p>

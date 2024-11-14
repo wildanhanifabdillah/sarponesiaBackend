@@ -2,45 +2,25 @@
 
 <body class="flex-column">
 
-<section class="login-page-user welcomeSection">
-    <div class="flexRow">
+    <section class="login-page-user welcomeSection">
+      <div class="flexRow">
         <div class="flexColumn">
-            <h1 class="heroTitle">Buat Akun Baru</h1>
-            <h2 class="accountInfoInstruction">Isikan informasi akun anda dengan benar untuk dapat mendaftar.</h2>
-
-            <!-- Registration Form -->
+          <h1 class="heroTitle">Selamat Datang </h1>
+          <h2 class="accountInfoInstruction">Buat akunmu untuk dapat mengakses lebih lengkap di Sarponesia</h2>
+          <div>
             <form action="{{ route('register') }}" method="POST">
                 @csrf
-
-                <!-- Display validation errors -->
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
-
-                <!-- Input fields for name, email, password, and confirm password -->
-                <input type="text" name="name" placeholder="Nama Lengkap" value="{{ old('name') }}" required>
-                <input type="email" name="email" placeholder="Email" value="{{ old('email') }}" required>
-                <input type="password" name="password" placeholder="Kata Sandi" required>
-                <input type="password" name="password_confirmation" placeholder="Konfirmasi Kata Sandi" required>
-
-                <!-- Submit button -->
-                <input type="submit" name="register" value="Daftar">
-
+              <input type="text" id="Email" name="email" placeholder="Email">
+              <input type="text" id="Username" name="name" placeholder="Nama">
+              <input type="password" id="Password" name="password" placeholder="Kata Sandi">
+              <input type="password" id="Confirm" name="password_confirmation" placeholder="Konfirmasi Kata Sandi">
+              <input type="submit" id="login" name="login" value="Sign Up">
             </form>
-
-            <p class="accountCreationPromptText">
-                <span>Sudah memiliki akun? </span>
-                <a href="{{ route('login') }}" class="accountCreationPromptLink">Masuk</a>
-            </p>
+          </div>
         </div>
         <img class="welcomeImage" src="/assets/c1ae8a2aea691a6114fc609fb781c377.png" alt="alt text" />
-    </div>
-</section>
+      </div>
+    </section>
+
 
 </body>
