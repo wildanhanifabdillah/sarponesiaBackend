@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   background-color: rgb(210, 209, 207);
-  overflow: hidden;
+  overflow: auto;
   height: 100%;
   width: 100%;
   justify-content: center;
@@ -51,6 +51,7 @@
   text-align: center;
 }
 
+
  input[type="text"] {
   display: block;
   width: 100%;
@@ -91,8 +92,10 @@ input[type="password"] {
   text-align: center; /* Center-aligns placeholder text */
 }
 
+
 .resetPasswordButton {
   display: flex;
+  text-decoration: none;
   justify-content: center;
   margin: 24px 0 0;
   width: 591px;

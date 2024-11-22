@@ -16,32 +16,67 @@ class CategorySeeder extends Seeder
         DB::table('categories')->insert([
             [
                 'Name' => 'Robusta',
-                'category_type' => 'product',
+                'category_type' => 'kopi',
                 'Description' => null
             ],
             [
                 'Name' => 'Roastedbean',
-                'category_type' => 'product',
+                'category_type' => 'kopi',
+                'Description' => null
+            ],
+            [
+                'Name' => 'Benih Kopi',
+                'category_type' => 'benih & pupuk',
                 'Description' => null
             ],
             [
                 'Name' => 'Pupuk Kopi',
-                'category_type' => 'product',
+                'category_type' => 'benih & pupuk',
                 'Description' => null
             ],
             [
-                'Name' => 'Peralatan',
-                'category_type' => 'product',
+                'Name' => 'Peralatan Pasca Panen',
+                'category_type' => 'peralatan',
+                'Description' => null
+            ],
+            [
+                'Name' => 'Peralatan Produksi',
+                'category_type' => 'peralatan',
+                'Description' => null
+            ],
+            [
+                'Name' => 'Peralatan Pengolahan',
+                'category_type' => 'peralatan',
+                'Description' => null
+            ],
+            [
+                'Name' => 'Peralatan Cafe',
+                'category_type' => 'peralatan',
                 'Description' => null
             ],
             [
                 'Name' => 'Perawatan Kebun',
-                'category_type' => 'service',
+                'category_type' => 'perawatan kebun & pelatihan',
                 'Description' => null
             ],
             [
-                'Name' => 'Pelatihan',
-                'category_type' => 'service',
+                'Name' => 'Barista dan Roastery',
+                'category_type' => 'perawatan kebun & pelatihan',
+                'Description' => null
+            ],
+            [
+                'Name' => 'Pelatihan Perawatan Kebun',
+                'category_type' => 'perawatan kebun & pelatihan',
+                'Description' => null
+            ],
+            [
+                'Name' => 'Pengolahan Pasca Panen',
+                'category_type' => 'perawatan kebun & pelatihan',
+                'Description' => null
+            ],
+            [
+                'Name' => 'Logo dan Branding',
+                'category_type' => 'perawatan kebun & pelatihan',
                 'Description' => null
             ],
             [

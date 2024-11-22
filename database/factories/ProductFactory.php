@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Category;
+use App\Models\Product;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Product>
@@ -17,12 +18,15 @@ class ProductFactory extends Factory
      */
     public function definition(): array
     {
+        $category = Category::whereIn('category_type', ['kopi', 'peralatan'])->inRandomOrder()->first();
+
         return [
             'Name' => $this->faker->word(),
             'Description' => $this->faker->sentence(),
             'Price' => $this->faker->randomFloat(2, 10000, 500000),
             'Stock' => $this->faker->numberBetween(1, 100),
-            'Category_ID' => Category::where('category_type', 'product')->inRandomOrder()->first()->Category_ID,
+            'Category_ID' => $category->Category_ID,
         ];
     }
 }
+

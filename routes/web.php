@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\Auth\LoginRegisterController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ArticleController;
 
 Route::view('/LandingPage','LandingPage')->name('home');
 Route::get('/LandingPage', [LandingPageController::class, 'index'])->name('home');
@@ -20,6 +22,11 @@ Route::get('/reset-password/{token}',[LoginRegisterController::class, 'passwordR
 Route::post('/reset-password', [LoginRegisterController::class, 'passwordUpdate'])->name('password.update');
 
 Route::post('/logout', [LoginRegisterController::class, 'logout'])->name('logout');
+
+Route::get('/benih-dan-pupuk', [ProductController::class, 'showBenihDanPupuk'])->name('benihpupuk');
+
+Route::get('/artikel', [ArticleController::class, 'index'])->name('articles.index');
+
 
 
 
@@ -52,27 +59,16 @@ Route::get('/pelatihan', function () {
     return view('Pelatihan');
 })->name('pelatihan');
 
-Route::get('/benih', function () {
-    return view('Benih&Pupuk');
-})->name('benih');
 
 Route::get('/kopi_produk', function () {
     return view('Katalog');
 })->name('kopi_produk');
 
 
-Route::get('/benihpupuk',function(){
-    return view('Benih&Pupuk');
-});
-
-
 Route::get('/pelatihan',function(){
     return view('Pelatihan');
 })->name('pelatihan');
 
-Route::get('/artikel',function(){
-    return view('Artikel');
-});
 
 Route::get('/program',function(){
     return view('Program');
@@ -80,6 +76,10 @@ Route::get('/program',function(){
 
 Route::get('/komunitas',function(){
     return view('Komunitas');
+});
+
+Route::get('/card',function(){
+    return view('card');
 });
 
 

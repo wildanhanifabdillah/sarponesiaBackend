@@ -22,7 +22,7 @@
                 <div class="categoryCardGrid">
                     <!-- Grid layout for category cards -->
                     <article class="newsCardItem" style="background-image: url('{{ asset('assets/d044a548fdf8d18044a724305ff309ee.png') }}');"><p class="cardHeading">NEWS</p></article>
-                    <article class="techCardItem" style="background-image: url('{{ asset('assets/a810d9a0eeeda60714ee7d27fc516537.png') }}');"><p class="cardHeading1">COFFEE TECHNOLOGY</p></article>
+                    <article class="techCardItem" style="background-image: url('{{ asset('assets/a810d9a0eeeda60714ee7d27fc516537.png') }}');"><p class="cardHeading1">COFFEE TECHNO<br>LOGY</p></article>
                     <article class="tipsCardItem" style="background-image: url('{{ asset('assets/2a1813239c478ea2ca7b00c95264dd97.png') }}');"><p class="cardHeading2">TIPS AND TRICK</p></article>
                 </div>
             </div>
@@ -68,4 +68,35 @@
         </div>
     </section>
 </main>
+
+
+{{-- testing --}}
+<h1>Kategori Artikel</h1>
+    <div>
+        <!-- Menampilkan kategori -->
+        <ul>
+            @foreach($categories as $category)
+                <li>
+                    <a href="{{ url('/artikel?category=' . $category->Name) }}">
+                        {{ $category->Name }}
+                    </a>
+                </li>
+            @endforeach
+        </ul>
+    </div>
+
+    <h2>Artikel</h2>
+    <div>
+        <!-- Menampilkan artikel -->
+        @forelse($articles as $article)
+            <div>
+                <h3>{{ $article->Title }}</h3>
+                <p>{{ $article->Content }}</p>
+                <p><strong>Kategori:</strong> {{ $article->CategoryName }}</p>
+                <hr>
+            </div>
+        @empty
+            <p>Artikel tidak ditemukan untuk kategori ini.</p>
+        @endforelse
+    </div>
 @endsection

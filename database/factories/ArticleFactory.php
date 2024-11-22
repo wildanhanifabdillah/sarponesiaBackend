@@ -17,10 +17,12 @@ class ArticleFactory extends Factory
      */
     public function definition(): array
     {
+        $category = Category::whereIn('category_type', ['article'])->inRandomOrder()->first();
+
         return [
             'Title' => $this->faker->sentence(),
             'Content' => $this->faker->paragraph(),
-            'Category_ID' => Category::where('category_type', 'article')->inRandomOrder()->first()->Category_ID,
+            'Category_ID' => $category->Category_ID,
         ];
     }
 }

@@ -64,7 +64,7 @@
                     <a href="#">Perlengkapan Produksi <img src="{{ asset('assets/1e8a7acc77c651d012c195dd61fd6298.svg') }}" alt="Icon"></a>
                     <ul class="dropdown">
                         <li class="{{ Request::is('benihpupuk') ? 'active' : '' }}">
-                            <a href="{{ url('/benihpupuk') }}">Benih & Pupuk</a>
+                            <a href="{{ route('benihpupuk') }}">Benih & Pupuk</a>
                         </li>
                         <li class="{{ Request::is('peralatan') ? 'active' : '' }}">
                             <a href="{{ url('/peralatan') }}">Peralatan</a>
