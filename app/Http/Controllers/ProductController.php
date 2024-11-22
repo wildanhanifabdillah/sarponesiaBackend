@@ -37,7 +37,7 @@ class ProductController extends Controller
             $query->where('Name', 'Peralatan Cafe');
         })->get();
 
-        return view('Peralatan', compact('peralatanPascaPanen', 'peralatanProduksi', 'peralatanPengolahan', 'peralatanCafe'));
+        return view('PerlengkapanProduksi_alat', compact('peralatanPascaPanen', 'peralatanProduksi', 'peralatanPengolahan', 'peralatanCafe'));
     }
 
     public function catalog(){
@@ -48,5 +48,8 @@ class ProductController extends Controller
         $roastedbean = Product::whereHas('category', function ($query) {
             $query->where('Name', 'Roastedbean');
         })->get();
+
+        return view('Katalog', compact('robusta', 'roastedBean'));
+
     }
 }
